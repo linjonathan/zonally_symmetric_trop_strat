@@ -16,7 +16,7 @@ We strongly recommend creating a virtual environment to install the packages req
 
 <code>conda create -n trop_strat numpy matplotlib python scipy</code>
 
-This requires conda to be installed, and should create a virtual environment with the name **trop_strat**. See [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for more details. Then, you need to install the package [findiff](https://findiff.readthedocs.io/en/latest/) via pip.
+This requires conda to be installed, and should create a virtual environment with the name **trop_strat**. See [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for more details. After activating the environment, you need to install the package [findiff](https://findiff.readthedocs.io/en/latest/) via pip.
 
 <code>pip install findiff</code>
 
