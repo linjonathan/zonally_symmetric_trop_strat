@@ -3,7 +3,8 @@
 # Modify the input parameters as you see fit, which will change the 
 # non-dimensional controlling parameters of the model.
 # You will also need to set the meridional SST function, in sT.
-# Author: Jonathan Lin
+# Author: Jonathan Lin (jlin@ldeo.columbia.edu)
+
 # %%
 import numpy as np
 from scipy import integrate
@@ -59,7 +60,7 @@ sT = integrate.cumtrapz(Y * (-np.exp(-((Y-2)/0.5)**2)
 plt.figure(); plt.plot(y, sT[:, 0], 'k-', zorder = 1); 
 plt.plot(np.flip(-y), np.flip(sT[:, 0]), 'k-', zorder = 1)
 plt.xlim([-6, 6]); plt.grid(zorder = 0);
-plt.xlabel('y (non-dimensional)'); plt.ylabel('Saturation Entropy (n.d.))')
+plt.xlabel('y (non-dimensional)'); plt.ylabel('Saturation Entropy (n.d.)')
 
 # % Set up conversion from non-dimensional units back to dimensional
 # Thermodynamic helper functions
@@ -221,6 +222,7 @@ axs[1][1].set_xlabel('y (non-dim)')
 axs[1][1].set_ylabel('z (non-dim)')
 fig.colorbar(pcm, ax=axs[1][1])
 plt.tight_layout()
+plt.savefig('numerical_error.png', dpi = 'figure', bbox_inches = 'tight')
 
 # %% Full wind profile
 fig, axs = plt.subplots(figsize = (15, 6), ncols = 2);
@@ -245,7 +247,7 @@ axs[1].set_ylim([0, 35]); axs[1].set_xlim([-4, 4])
 axs[1].set_xlabel('y (non-dimensional)')
 axs[1].set_ylabel('Height (km)')
 axs[1].set_title('Meridional Wind')
-plt.savefig('/home/jlin/src/strat/zonally_symmetric_wind_response.png', dpi = 'figure', bbox_inches = 'tight')
+plt.savefig('zonally_symmetric_wind_response.png', dpi = 'figure', bbox_inches = 'tight')
 
 plt.figure(figsize=(16, 8));
 cmax = np.max(w_Mode)
@@ -258,4 +260,4 @@ plt.quiver(yy[::10], atm_z[::20], v_Mode[::10, ::20].T * q_scale, np.zeros(v_Mod
 plt.colorbar(h, orientation = 'vertical'); plt.ylim([0, 30]); plt.xlim([-4, 4])
 plt.xlabel('y (non-dimensional)'); plt.ylabel('Height (km)')
 plt.title('Contours: u, Arrows: v, Shading: w')
-plt.savefig('/home/jlin/src/strat/zonally_symmetric_response.png', dpi = 'figure', bbox_inches = 'tight')
+plt.savefig('zonally_symmetric_response.png', dpi = 'figure', bbox_inches = 'tight')
