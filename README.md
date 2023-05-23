@@ -1,6 +1,6 @@
 # Zonally Symmetric Troposphere-Stratosphere
 
-Solves for the coupled troposphere-stratosphere response to a SST perturbation, under QE dynamics. Modify the input parameters as you see fit, which will change the non-dimensional controlling parameters of the model. You will also need to set the meridional SST function, in sT.
+Solves for the coupled troposphere-stratosphere, linear response to a SST perturbation, under QE dynamics. Modify the input parameters as you see fit, which will change the non-dimensional controlling parameters of the model. You will also need to set the meridional SST function, in sT.
 
 Citation: [Lin et al. (2023)](https://arxiv.org/abs/2305.01110) (in review)
 
