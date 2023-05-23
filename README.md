@@ -20,4 +20,5 @@ This requires conda to be installed, and should create a virtual environment wit
 
 <code>pip install findiff</code>
 
-Author: Jonathan Lin (jlin@ldeo.columbia.edu)
+## Code Contributions
+Jonathan Lin (jlin@ldeo.columbia.edu)
