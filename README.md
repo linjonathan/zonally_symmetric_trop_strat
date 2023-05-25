@@ -1,13 +1,13 @@
 # Zonally Symmetric Troposphere-Stratosphere
 
-Solves for the coupled troposphere-stratosphere response to a SST perturbation, under QE dynamics. Modify the input parameters as you see fit, which will change the non-dimensional controlling parameters of the model. You will also need to set the meridional SST function, in sT.
+Solves for the steady, coupled troposphere-stratosphere, linear response to a SST perturbation, under QE dynamics. Modify the input parameters as you see fit, which will change the non-dimensional controlling parameters of the model. You will also need to set the meridional SST function, in sT.
 
 Citation: [Lin et al. (2023)](https://arxiv.org/abs/2305.01110) (in review)
 
 ## Quick Start: TLDR
 If you know what you are doing and familiar with Python packages, here is a quick start command list to get the model running.
 
-    conda create -n trop_strat numpy matplotlib python scipy
+    conda create -n trop_strat numpy matplotlib python scipy xarray
     conda activate trop_strat
     pip install findiff
     
@@ -20,4 +20,5 @@ This requires conda to be installed, and should create a virtual environment wit
 
 <code>pip install findiff</code>
 
-Author: Jonathan Lin (jlin@ldeo.columbia.edu)
+## Code Contributions
+Jonathan Lin (jlin@ldeo.columbia.edu)
