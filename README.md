@@ -14,7 +14,7 @@ If you know what you are doing and familiar with Python packages, here is a quic
 ## Environment Set Up
 We strongly recommend creating a virtual environment to install the packages required to run this model. A very popular virtual environment/package manager is [Anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#).
 
-<code>conda create -n trop_strat numpy matplotlib python scipy</code>
+<code>conda create -n trop_strat numpy matplotlib python scipy xarray</code>
 
 This requires conda to be installed, and should create a virtual environment with the name **trop_strat**. See [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for more details. After activating the environment, you need to install the package [findiff](https://findiff.readthedocs.io/en/latest/) via pip.
 
