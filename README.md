@@ -7,7 +7,7 @@ Citation: [Lin et al. (2023)](https://arxiv.org/abs/2305.01110) (in review)
 ## Quick Start: TLDR
 If you know what you are doing and familiar with Python packages, here is a quick start command list to get the model running.
 
-    conda create -n trop_strat numpy matplotlib python scipy
+    conda create -n trop_strat numpy matplotlib python scipy xarray
     conda activate trop_strat
     pip install findiff
     
