@@ -6,6 +6,7 @@
 # Author: Jonathan Lin (jlin@ldeo.columbia.edu)
 
 # %%
+import xarray as xr
 import numpy as np
 from scipy import integrate
 import matplotlib.pyplot as plt
@@ -13,6 +14,7 @@ import findiff
 
 ### BEGIN INPUT PARAMETERS ###
 k = 0                         # Horizontal wave-number, DOES NOT WORK FOR k != 0 yet
+output_filename = 'output.nc' # file name of the output netCDF
 
 # Dimensional coefficients
 Ly = 1200 * 1000              # meridional length scale (m)
@@ -150,10 +152,6 @@ for i in range(N_iter):
     print(np.sum(np.abs(U0 - U0_new)))
     U0 = U0_new
 
-plt.figure()
-plt.pcolormesh(y, z, phi.T, cmap = 'gist_heat_r')
-plt.colorbar()
-
 # %% Solve for each variable
 uBT = U0[:, 0]                                                        # barotropic zonal wind
 uBC = dsdy[:, 0] / y                                                  # baroclinic zonal wind
@@ -261,3 +259,14 @@ plt.colorbar(h, orientation = 'vertical'); plt.ylim([0, 30]); plt.xlim([-4, 4])
 plt.xlabel('y (non-dimensional)'); plt.ylabel('Height (km)')
 plt.title('Contours: u, Arrows: v, Shading: w')
 plt.savefig('zonally_symmetric_response.png', dpi = 'figure', bbox_inches = 'tight')
+
+# %% Save as netCDF file
+ds = xr.Dataset(data_vars = dict(u = (["y", "z"], u_Mode), v = (["y", "z"], v_Mode),
+                                 w = (["y", "z"], w_Mode), phi = (["y", "z"], phi_Mode)),
+               coords = dict(y = yy, z = atm_z))
+ds.y.attrs["units"] = "non-dimensional"
+ds.z.attrs["units"] = "km"
+ds.u.attrs["units"] = "non-dimensional"
+ds.v.attrs["units"] = "non-dimensional"
+ds.w.attrs["units"] = "non-dimensional"
+ds.to_netcdf(output_filename)
