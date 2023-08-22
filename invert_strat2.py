@@ -98,8 +98,8 @@ print('xi: %f, gamma: %f' % (xi, gamma))
 print('gamma * xi = %f' % (gamma * xi))
 
 # %% Iterative process to couple with the troposphere
-sT = integrate.cumtrapz(Y * (-np.exp(-((Y-2.)/0.5)**2) 
-                             -np.exp(-((Y+2.)/0.5)**2)),
+sT = integrate.cumtrapz(Y * (-np.exp(-((Y-1.5)/0.5)**2) 
+                             -np.exp(-((Y+1.5)/0.5)**2)),
                              x = y, initial = 0, axis = 0)
 
 # Set up derivatives
